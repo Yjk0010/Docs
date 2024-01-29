@@ -1,0 +1,30 @@
+@font-face {
+  font-family: DingTalkJinBuTi;
+  src: url("docs/style/font/DingTalkJinBuTi.ttf") format("TrueType");
+}
+
+:root {
+  --vp-font-family-base: DingTalkJinBuTi;
+  --vp-font-family-mono: DingTalkJinBuTi;
+}
+
+.cor-tip {
+  color: var(--vp-c-green-1);
+  font-weight: bold;
+}
+.cor-in {
+  color: var(--vp-c-indigo-1);
+  font-weight: bold;
+}
+.cor-wa {
+  color: var(--vp-c-yellow-1);
+  font-weight: bold;
+}
+.cor-da {
+  color: var(--vp-c-red-1);
+  font-weight: bold;
+}
+.cor-pr {
+  color: var(--vp-c-purple-1);
+  font-weight: bold;
+}

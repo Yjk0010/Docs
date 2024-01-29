@@ -1,0 +1,7 @@
+/.vitepress/dist
+/.vitepress/dist.zip
+/.vitepress/cache
+/.vitepress/.temp
+/node_modules
+/docs/components.d.ts
+**.zip
