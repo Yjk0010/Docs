@@ -26,7 +26,7 @@ li：list item
 
 ul：unordered list
 
-> 无序列表常用于制作菜单 或 新闻列表。
+> 无序列表常用于制作菜单 或 新闻列表.
 
 xxx 美女择偶条件：
 

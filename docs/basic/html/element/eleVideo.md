@@ -8,9 +8,9 @@ audio 音频
 
 controls: 控制控件的显示，取值只能为 controls
 
-autoplay: 布尔属性，自动播放。
+autoplay: 布尔属性，自动播放.
 
-muted: 布尔属性，静音播放。
+muted: 布尔属性，静音播放.
 
 loop: 布尔属性，循环播放
 

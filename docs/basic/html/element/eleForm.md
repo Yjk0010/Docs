@@ -10,7 +10,7 @@
 
 > form 元素有自己的提交方式 `form-data`
 
-通常, 会将整个表单元素, 放置 form 元素的内部, 作用是当提交表单时, 会将 form 元素内部的表单内容以合适的方式提交到服务器。
+通常, 会将整个表单元素, 放置 form 元素的内部, 作用是当提交表单时, 会将 form 元素内部的表单内容以合适的方式提交到服务器.
 
 form 的 <span class="cor-tip">onsubmit</span> 事件
 
@@ -38,7 +38,7 @@ form 的 <span class="cor-tip">onsubmit</span> 事件
 
 - input 元素可以制作按钮
 
-  当 type 值为 reset、button、submit 时, input 表示按钮。
+  当 type 值为 reset、button、submit 时, input 表示按钮.
 
 ## select 元素
 

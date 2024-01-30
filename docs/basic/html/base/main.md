@@ -6,7 +6,7 @@
 
 > 查询 <span class="cor-tip">HTML</span> 最新消息 传送门 [MDN HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
 
-HTML 是 W3C 组织定义的语言标准：HTML 是用于描述<span class="cor-in">页面结构</span>结构的语言。
+HTML 是 W3C 组织定义的语言标准：HTML 是用于描述<span class="cor-in">页面结构</span>结构的语言.
 
 ## 网页基础模版
 
@@ -94,13 +94,13 @@ HTML 是 W3C 组织定义的语言标准：HTML 是用于描述<span class="cor-
 HTML： <span class="cor-wa">\<!DOCTYPE <span class="cor-da">html</span>
 \></span>
 
-文档声明，告诉浏览器，当前文档使用的 HTML 标准是 HTML5。
+文档声明，告诉浏览器，当前文档使用的 HTML 标准是 HTML5.
 
-不写文档声明，将导致浏览器进入<span class="cor-in">怪异渲染模式。</span>
+不写文档声明，将导致浏览器进入<span class="cor-in">怪异渲染模式.</span>
 
 ### 根元素 - html
 
-> 一个页面最多只能一个，并且该元素是所有其他元素的父元素或祖先元素。
+> 一个页面最多只能一个，并且该元素是所有其他元素的父元素或祖先元素.
 
 > HTML5 版本中没有强制要求书写该元素
 
@@ -110,22 +110,22 @@ HTML： <span class="cor-wa">\<!DOCTYPE <span class="cor-da">html</span>
 
 ### lang 属性
 
-> language，全局属性，表示该元素内部使用的文字是使用哪一种自然语言书写而成的。  
+> language，全局属性，表示该元素内部使用的文字是使用哪一种自然语言书写而成的.  
 > `cmn-hans` <span class="cor-in">简体中文</span>
 
 ```html
 <head lang="cmn-hans"> </head>
 ```
 
-文档头，文档头内部的内容，不会显示到页面上。
+文档头，文档头内部的内容，不会显示到页面上.
 
-文档的元数据：附加信息。
+文档的元数据：附加信息.
 
 ```html
 <meta charset="UTF-8" />
 ```
 
-charset：指定网页内容编码。
+charset：指定网页内容编码.
 
 UTF-8 是 Unicode 编码的一个版本
 
@@ -137,7 +137,7 @@ UTF-8 是 Unicode 编码的一个版本
 
 ### 文档体
 
-> 页面上所有要参与显示的元素，都应该放置到文档体中。
+> 页面上所有要参与显示的元素，都应该放置到文档体中.
 
 ```html
 <body></body>
@@ -145,7 +145,7 @@ UTF-8 是 Unicode 编码的一个版本
 
 ## 布尔属性
 
-> 某些属性，只有两种状态。这种属性叫做布尔属性
+> 某些属性，只有两种状态.这种属性叫做布尔属性
 
 1. 不写 (为不设置该属性)
 2. 取值为属性名 (为设置该属性)
@@ -179,7 +179,7 @@ UTF-8 是 Unicode 编码的一个版本
 
 以前：块级元素可以包含行级元素，行级元素不可以包含块级元素，`a` 元素除外
 
-元素的包含关系由元素的内容类别决定。
+元素的包含关系由元素的内容类别决定.
 
 例如，查看 `h1` 元素中是否可以包含 `p` 元素
 
@@ -193,6 +193,6 @@ UTF-8 是 Unicode 编码的一个版本
 ## 行块盒
 
 > 以前: 某些元素在显示时会独占一行（块级元素），而某些元素不会（行级元素）
-> 到了 HTML5，<span class="cor-da">已经弃用这种说法。</span>
+> 到了 HTML5，<span class="cor-da">已经弃用这种说法.</span>
 >
 > 现在称为 `行盒` 和 `块盒`

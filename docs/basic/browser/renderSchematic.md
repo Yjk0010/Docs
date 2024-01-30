@@ -2,13 +2,13 @@
 
 ## 浏览器是如何渲染页面的?
 
-当浏览器的<span class="cor-wa">网络线程</span>收到`HTML`文档后，会产生一个渲染任务，并将其传递给渲染主线程的消息队列.
+当浏览器的<TText type="warning">网络线程</TText>收到`HTML`文档后，会产生一个渲染任务，并将其传递给渲染主线程的消息队列.
 
-在<span class="cor-tip">事件循环机制</span>的作用下，<span class="cor-tip">渲染主线程</span>取出<span class="cor-wa">消息队列</span>中的<span class="cor-in">渲染任务</span>，开启渲染流程.
+在<TText>事件循环机制</TText>的作用下，<TText>渲染主线程</TText>取出<TText type="warning">消息队列</TText>中的<TText type="info">渲染任务</TText>，开启渲染流程.
 
 整个渲染流程分为多个阶段
 
-分别是：<span class="cor-da">HTML 解析、样式计算、布局、分层、绘制、分块、光栅化、画</span>
+分别是：<TText type="danger">HTML 解析、样式计算、布局、分层、绘制、分块、光栅化、画</TText>
 
 每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入.
 
@@ -18,21 +18,21 @@
 
 ## 第一步 **解析 HTML**
 
-> 完成后，会得到`DOM`树和`CSSOM`树，浏览器的<span class="cor-tip">默认样式</span>、<span class="cor-tip">内部样式</span>、<span class="cor-tip">外部样式</span>、<span class="cor-tip">行内样式</span>均会包含在 _CSSOM_ 树中.
+> 完成后，会得到`DOM`树和`CSSOM`树，浏览器的<TText>默认样式</TText>、<TText>内部样式</TText>、<TText>外部样式</TText>、<TText>行内样式</TText>均会包含在 _CSSOM_ 树中.
 
 <PicViewer title="解析 HTML - Parse HTML" src="/assets/browser/render-2.jpg" alt="解析html"/>
 
 <PicViewer title="HTML 解析过程中遇到 CSS 代码怎么办? " src="/assets/browser/render-5.jpg" alt="解析中遇到css"/>
 
-<span class="cor-wa">解析过程中</span>遇到`CSS`解析`CSS`，遇到`JS`执行`JS`.  
-为了提高解析效率，浏览器在<span class="cor-tip">开始解析前</span>，会启动一个<span class="cor-da">预解析的线程</span>，率先下载`HTML`中的外部`CSS`文件和 外部的`JS`文件.  
-如果主线程解析到`link元素`位置，此时外部的`CSS`文件还没有下载解析好，主线程<span class="cor-da">不会等待</span>，  
+<TText type="warning">解析过程中</TText>遇到`CSS`解析`CSS`，遇到`JS`执行`JS`.  
+为了提高解析效率，浏览器在<TText>开始解析前</TText>，会启动一个<TText type="danger">预解析的线程</TText>，率先下载`HTML`中的外部`CSS`文件和 外部的`JS`文件.  
+如果主线程解析到`link元素`位置，此时外部的`CSS`文件还没有下载解析好，主线程<TText type="danger">不会等待</TText>，  
 继续解析后续的`HTML`. 这是因为下载和解析`CSS`的工作是在预解析线程中进行的. 这就是`CSS`不会阻塞`HTML`解析的根本原因.
 
 <PicViewer title="HTML 解析过程中遇到 JS 代码怎么办? " src="/assets/browser/render-6.jpg" alt="解析过程中遇到 JS"/>
 
 如果主线程解析到`script`位置，会停止解析`HTML`，转而等待`JS`文件下载好，并将全局代码解析执行完成后，才能继续解析`HTML`.  
-这是因为 JS 代码的执行过程<span class="cor-wa">可能会</span>修改当前的`DOM`树，所以`DOM`树的生成<span class="cor-da">必须暂停</span>. 这就是`JS`会阻塞`HTML`解析的根本原因.
+这是因为 JS 代码的执行过程<TText type="warning">可能会</TText>修改当前的`DOM`树，所以`DOM`树的生成<TText type="danger">必须暂停</TText>. 这就是`JS`会阻塞`HTML`解析的根本原因.
 
 <PicViewer title="解析 HTML | Document Object Model " src="/assets/browser/render-3.jpg" alt=""/>
 
@@ -46,7 +46,7 @@
 
 主线程会遍历得到的`DOM`树，依次为树中的每个节点计算出它最终的样式，称之为 _Computed Style_.
 
-在这一过程中，很多预设值会变成绝对值，比如`red`会变成`rgb(255,0,0)`；相对单位会变成绝对单位，比如`em`会变成`px`.
+在这一过程中，很多预设值会变成绝对值，比如`red`会变成`rgb(255,0,0)`;相对单位会变成绝对单位，比如`em`会变成`px`.
 
 ## 第三步 **布局**
 
@@ -72,7 +72,7 @@
 
 ## 第四步 **分层**
 
-> 这个在 chrome 控制台中 点击<span class="cor-wa">三个点 -> more tools -> Layers</span>可以看到
+> 这个在 chrome 控制台中 点击<TText type="warning">三个点 -> more tools -> Layers</TText>可以看到
 
 <PicViewer title="分层 - Layer" src="/assets/browser/render-12.jpg" alt=""/>
 

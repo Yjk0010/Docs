@@ -28,59 +28,66 @@
 
 ## 颜色加粗
 
-<span class="cor-tip">主色绿</span>
+<TText>默认色</TText>
 
-```markdown
-<span class="cor-tip">主色绿</span>
+```html
+<TText>默认色</TText>
 ```
 
-<span class="cor-da">来个红</span>
+<TText type="success">成功色</TText>
 
-```markdown
-<span class="cor-da">来个红</span>
+```html
+<TText type="success">成功色</TText>
 ```
 
-<span class="cor-wa">淡淡的黄</span>
+<TText type="danger">异常色</TText>
 
-```markdown
-<span class="cor-wa">淡淡的黄</span>
+```html
+<TText type="danger">异常色</TText>
 ```
 
-<span class="cor-in">男人深沉灰</span>
+<TText type="warning">告警色</TText>
 
-```markdown
-<span class="cor-in">男人深沉灰</span>
+```html
+<TText type="warning">告警色</TText>
+```
+
+<TText type="info">提示色</TText>
+
+```html
+<TText type="info">提示色</TText>
 ```
 
 ## 徽章
 
+
 ### info<Badge type="info">badge</Badge>
 
-```markdown
+```html
 info<Badge type="info">badge</Badge>
 ```
 
 ### tip<Badge type="tip">badge</Badge>
 
-```markdown
+```html
 tip<Badge type="tip">badge</Badge>
 ```
 
 ### warning<Badge type="warning">badge</Badge>
 
-```markdown
+```html
 warning<Badge type="warning">badge</Badge>
 ```
 
 ### danger<Badge type="danger">badge</Badge>
 
-```markdown
+```html
 danger<Badge type="danger">badge</Badge>
 ```
 
 ## 加粗
 
-不加粗**加粗**
+不加粗 **加粗**
 
 ```markdown
 **加粗**
@@ -176,8 +183,8 @@ var a = 1;
 
 <PicViewer title="这是头像" src="/logo.png" alt=""/>
 
-```javascript
-<PicViewer title="这是头像" src="/logo.png" alt="" />
+```html
+<PicViewer title="这是头像" src="/logo.png" alt=""></PicViewer>
 ```
 
 ## 超链接
@@ -218,18 +225,18 @@ var a = 1;
 
 ## 表格
 
-| 姓名 | 技能 | 排行 |
-| ---- | :--: | ---: |
-| 刘备 |  哭  | 大哥 |
-| 关羽 |  打  | 二哥 |
-| 张飞 |  骂  | 三弟 |
+| 姓名 | 技能  | 排行 |
+| ---- | :---: | ---: |
+| 刘备 |  哭   | 大哥 |
+| 关羽 |  打   | 二哥 |
+| 张飞 |  骂   | 三弟 |
 
 ```markdown
-| 姓名 | 技能 | 排行 |
-| ---- | :--: | ---: |
-| 刘备 |  哭  | 大哥 |
-| 关羽 |  打  | 二哥 |
-| 张飞 |  骂  | 三弟 |
+| 姓名 | 技能  | 排行 |
+| ---- | :---: | ---: |
+| 刘备 |  哭   | 大哥 |
+| 关羽 |  打   | 二哥 |
+| 张飞 |  骂   | 三弟 |
 ```
 
 ## 代码
@@ -252,31 +259,43 @@ var a = 15;
 ```
 ````
 
+## 代码组
+
+::: code-group
+
+```sh [npm]
+$ npm add -D vitepress
+```
+
+```sh [pnpm]
+$ pnpm add -D vitepress
+```
+
+```sh [yarn]
+$ yarn add -D vitepress
+```
+
+:::
+
 ## 代码块中的高亮行
 
-```javascript{1,3,5-6,8}
+```javascript{1,3-5}
 var a = 1;
 var a = 2;
 var a = 3;
 var a = 4;
 var a = 5;
 var a = 6;
-var a = 7;
-var a = 8;
-var a = 9;
 ```
 
 ````markdown
-```javascript{1,3,5-6,8}
+```javascript{1,3-5}
 var a = 1;
 var a = 2;
 var a = 3;
 var a = 4;
 var a = 5;
 var a = 6;
-var a = 7;
-var a = 8;
-var a = 9;
 ```
 ````
 
@@ -328,7 +347,7 @@ var a = 18; // [!code  warning]
 :tada: :100:
 ```
 
-多数[表情符号](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json)地址。
+多数[表情符号](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json)地址.
 
 ## 输出目录
 

@@ -6,7 +6,7 @@ export default (): DefaultTheme.SidebarItem[] => [
     link: 'main',
   },
   {
-    text: '小知识',
+    text: '文档书写提示',
     collapsed: false,
     base: '/home/',
     items:

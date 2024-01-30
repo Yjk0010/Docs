@@ -8,23 +8,12 @@
   --vp-font-family-mono: DingTalkJinBuTi;
 }
 
-.cor-tip {
-  color: var(--vp-c-green-1);
-  font-weight: bold;
+/* 加粗 */
+strong {
+  color: #37cac5;
 }
-.cor-in {
-  color: var(--vp-c-indigo-1);
-  font-weight: bold;
-}
-.cor-wa {
-  color: var(--vp-c-yellow-1);
-  font-weight: bold;
-}
-.cor-da {
-  color: var(--vp-c-red-1);
-  font-weight: bold;
-}
-.cor-pr {
-  color: var(--vp-c-purple-1);
-  font-weight: bold;
+
+/* 斜体 */
+em {
+  color: #39a7e0;
 }

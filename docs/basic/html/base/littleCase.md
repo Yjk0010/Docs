@@ -4,34 +4,34 @@
 
 `DOCTYPE` 是 `HTML5` 中一种标准通用标记语言的文档类型声明, 它的目
 的是告诉浏览器(解析器)应该以什么样(`html` 或 `xhtml`)的文档类
-型定义来解析文档, 不同的渲染模式会影响浏览器对 CSS 代码甚⾄ JavaScript 脚本的解析。  
- <span class="cor-da">它必须声明在 HTML ⽂档的第⼀⾏。</span>
+型定义来解析文档, 不同的渲染模式会影响浏览器对 CSS 代码甚⾄ JavaScript 脚本的解析.  
+ <TText type="danger">它必须声明在 HTML ⽂档的第⼀⾏.</TText>
 浏览器渲染页面的两种模式
 
 可通过 `document.compatMode`获取
 
-`CSS1Compat`: <span class="cor-tip">标准模式(Strick mode)</span>  
- 默认模式, 浏览器使用 W3C 的标准解析渲染页面。  
- 在标准模式中, 浏览器以其支持的最高标准呈现页面。
+`CSS1Compat`: <TText>标准模式(Strick mode)</TText>  
+ 默认模式, 浏览器使用 W3C 的标准解析渲染页面.  
+ 在标准模式中, 浏览器以其支持的最高标准呈现页面.
 
-`BackCompat`: <span class="cor-wa">怪异模式(混杂模式)(Quick mode)</span>  
- 浏览器使用自己的怪异模式解析渲染页面。  
- 在怪异模式中, 页面以一种比较宽松的向后兼容的方式显示。
+`BackCompat`: <TText type="warning">怪异模式(混杂模式)(Quick mode)</TText>  
+ 浏览器使用自己的怪异模式解析渲染页面.  
+ 在怪异模式中, 页面以一种比较宽松的向后兼容的方式显示.
 
 ## defer 和 async
 
-<span class="cor-da">script 标签中 defer 和 async 的区别</span>
+<TText type="danger">script 标签中 defer 和 async 的区别</TText>
 
-> 如果没有 defer 或 async 属性, 浏览器会立即加载并执行相应的脚本。
+> 如果没有 defer 或 async 属性, 浏览器会立即加载并执行相应的脚本.
 > 它不会等待后续加载的文档元素, 读取到就会开始加载和执行, 这样
-> 就阻塞了后续文档的加载。
+> 就阻塞了后续文档的加载.
 
 下图可以直观的看出三者之间的区别:
 
 <PicViewer title="加载过程" src="/assets/html/main-1.jpg" alt="" />
 
-其中 <span class="cor-in">蓝色</span> 代表 `js` 脚本`网络加载时间`, <span class="cor-da">红色</span> 代表 `js` 脚本`执行时间`, <span class="cor-tip">绿
-色</span> 代表 `html 解析`。
+其中 <TText type="info">蓝色</TText> 代表 `js` 脚本`网络加载时间`, <TText type="danger">红色</TText> 代表 `js` 脚本`执行时间`, <TText>绿
+色</TText> 代表 `html 解析`.
 
 defer 和 async 属性都是去异步加载外部的 JS 脚本文件, 它们都不会阻塞页面的解析, 其区别如下:
 
@@ -45,14 +45,14 @@ defer 和 async 属性都是去异步加载外部的 JS 脚本文件, 它们都�
 
 ## 行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
 
-```markdown
-行内元素有: a b span img input select strong；
-块级元素有: div ul ol li dl dt dd h1 h2 h3 h4 h5 h6 p；
-空元素, 即没有内容的 HTML 元素。空元素是在开始标签中关闭的,
+```html
+行内元素有: <a> <b> <span> <img> <input> <select> <strong>;
+块级元素有: <div> <ul> <ol> <li> <dl> <dt> <dd> <h1> <h2> <h3> <h4> <h5> <h6> <p>;
+空元素, 即没有内容的 HTML 元素.空元素是在开始标签中关闭的,
 也就是空元素没有闭合标签:
-常见的有: <br>、<hr>、<img>、<input>、<link>、<meta>；
+常见的有: <br>、<hr>、<img>、<input>、<link>、<meta>;
 鲜见的有: <area>、<base>、<col>、<colgroup>、<command>、<embed>、
-<keygen>、<param>、<source>、<track>、<wbr>。
+<keygen>、<param>、<source>、<track>、<wbr>.
 ```
 
 ## 浏览器是如何对 HTML5 的离线储存资源进行管理和加载？
@@ -61,12 +61,12 @@ defer 和 async 属性都是去异步加载外部的 JS 脚本文件, 它们都�
 
 在线的情况下, 浏览器发现 `html` 头部有 `manifest` 属性, 它会请求
 `manifest` 文件, 如果是第一次访问页面 , 那么浏览器就会根据
-`manifest` 文件的内容下载相应的资源并且进行离线存储。如果已经
+`manifest` 文件的内容下载相应的资源并且进行离线存储.如果已经
 访问过页面并且资源已经进行离线存储了, 那么浏览器就会使用离线
 的资源加载页面, 然后浏览器会对比新的 `manifest` 文件与旧的
 `manifest` 文件, 如果文件没有发生改变, 就不做任何操作, 如果文
-件改变了, 就会重新下载文件中的资源并进行离线存储。
-离线的情况下, 浏览器会直接使用离线存储的资源。
+件改变了, 就会重新下载文件中的资源并进行离线存储.
+离线的情况下, 浏览器会直接使用离线存储的资源.
 
 ## Canvas 和 SVG 的区别
 
@@ -75,8 +75,8 @@ defer 和 async 属性都是去异步加载外部的 JS 脚本文件, 它们都�
 > SVG 可缩放矢量图形（Scalable Vector Graphics）是基于可扩展标
 > 记语言 XML 描述的 2D 图形的语言, SVG 基于 XML 就意味着 SVG DOM
 > 中的每个元素都是可用的, 可以为某个元素附加 Javascript 事件处
-> 理器。在 SVG 中, 每个被绘制的图形均被视为对象。如果 SVG 对象
-> 的属性发生变化, 那么浏览器能够自动重现图形。
+> 理器.在 SVG 中, 每个被绘制的图形均被视为对象.如果 SVG 对象
+> 的属性发生变化, 那么浏览器能够自动重现图形.
 
 - 其特点如下:
   - 不依赖分辨率
@@ -88,7 +88,7 @@ defer 和 async 属性都是去异步加载外部的 JS 脚本文件, 它们都�
 ### Canvas
 
 > Canvas 是画布, 通过 Javascript 来绘制 2D 图形, 是逐像素进行渲
-> 染的。其位置发生改变, 就会重新进行绘制。
+> 染的.其位置发生改变, 就会重新进行绘制.
 
 - 其特点如下:
   - 依赖分辨率
@@ -99,17 +99,17 @@ defer 和 async 属性都是去异步加载外部的 JS 脚本文件, 它们都�
 
 ::: tip 提示
 注: 矢量图, 也称为面向对象的图像或绘图图像, 在数学上定义为一
-系列由线连接的点。矢量文件中的图形元素称为对象。每个对象都是
+系列由线连接的点.矢量文件中的图形元素称为对象.每个对象都是
 一个自成一体的实体, 它具有颜色、形状、轮廓、大小和屏幕位置等
-属性。
+属性.
 :::
 
 ## 说一下 HTML5 drag API
 
-- `dragstart`: 事件主体是被拖放元素, 在开始拖放被拖放元素时触发。
-- `darg`: 事件主体是被拖放元素, 在正在拖放被拖放元素时触发。
-- `dragenter`: 事件主体是目标元素, 在被拖放元素进入某元素时触发。
-- `dragover`: 事件主体是目标元素, 在被拖放在某元素内移动时触发。
-- `dragleave`: 事件主体是目标元素, 在被拖放元素移出目标元素是触发。
-- `drop`: 事件主体是目标元素, 在目标元素完全接受被拖放元素时触发。
-- `dragend`: 事件主体是被拖放元素, 在整个拖放操作结束时触发。
+- `dragstart`: 事件主体是被拖放元素, 在开始拖放被拖放元素时触发.
+- `darg`: 事件主体是被拖放元素, 在正在拖放被拖放元素时触发.
+- `dragenter`: 事件主体是目标元素, 在被拖放元素进入某元素时触发.
+- `dragover`: 事件主体是目标元素, 在被拖放在某元素内移动时触发.
+- `dragleave`: 事件主体是目标元素, 在被拖放元素移出目标元素是触发.
+- `drop`: 事件主体是目标元素, 在目标元素完全接受被拖放元素时触发.
+- `dragend`: 事件主体是被拖放元素, 在整个拖放操作结束时触发.
