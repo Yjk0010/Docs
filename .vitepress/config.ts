@@ -11,6 +11,7 @@ import Inspect from 'vite-plugin-inspect'
 import home from "./sidebar/home"
 import basic from "./sidebar/basic"
 import js from "./sidebar/js"
+import vue from "./sidebar/vue"
 
 
 // https://vitepress.dev/reference/site-config
@@ -32,12 +33,14 @@ export default defineConfig({
       { text: '介绍', link: '/home/main', activeMatch: '/home/' },
       { text: '基石', link: '/basic/main', activeMatch: '/basic/' },
       { text: 'JAVASCRIPT', link: '/js/main', activeMatch: '/js/' },
+      { text: 'VUE', link: '/vue/main', activeMatch: '/vue/' },
     ],
 
     sidebar: {
       '/home/': { base: '/home/', items: home() },
       '/basic/': { base: '/basic/', items: basic() },
       '/js/': { base: '/js/', items: js() },
+      '/vue/': { base: '/vue/', items: vue() },
     },
 
     socialLinks: [

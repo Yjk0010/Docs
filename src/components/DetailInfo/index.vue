@@ -7,43 +7,21 @@
   <div class="detailInfo">
     <template v-for="item in infoConfig">
       <template v-if="item.type === 'line'">
-        <Line
-          v-if="show(info[item.key], item, info)"
-          style="width: 100%; margin-bottom: 12px"
-          :key="item.key"
-          :title="item.label"
-          :position="item.position"
-        ></Line>
+        <Line v-if="show(info[item.key], item, info)" style="width: 100%; margin-bottom: 12px" :key="item.key"
+          :title="item.label" :position="item.position"></Line>
       </template>
-      <div
-        :key="item.key"
-        class="detail-info-item"
-        :style="{ width: `${100 / (item.col || col)}%` }"
-        v-else-if="show(info[item.key], item, info)"
-      >
-        <span
-          :style="{ width: `${labelWidth}` }"
-          :class="['label', { colon: colon }]"
-          >{{
-            item.labelCustomRender
-              ? item.labelCustomRender(item.label, info[item.key], item, info)
-              : item.label
-          }}</span
-        >
+      <div :key="item.key" class="detail-info-item" :style="{ width: `${100 / (item.col || col)}%` }"
+        v-else-if="show(info[item.key], item, info)">
+        <span :style="{ width: `${labelWidth}` }" :class="['label', { colon: colon }]">{{
+          item.labelCustomRender
+          ? item.labelCustomRender(item.label, info[item.key], item, info)
+          : item.label
+        }}</span>
         <span v-if="item.slotName" style="flex: 1">
-          <slot
-            :name="item.slotName"
-            :value="info[item.key]"
-            :item="item"
-            :info="info"
-          ></slot>
+          <slot :name="item.slotName" :value="info[item.key]" :item="item" :info="info"></slot>
         </span>
-        <span
-          v-else
-          :class="['value', 'nowrap', { wrap: item.wrap }]"
-          :title="item.ellipsis ? valueCustomRender(item) : ''"
-          v-html="valueCustomRender(item)"
-        ></span>
+        <span v-else :class="['value', 'nowrap', { wrap: item.wrap }]"
+          :title="item.ellipsis ? valueCustomRender(item) : ''" v-html="valueCustomRender(item)"></span>
       </div>
     </template>
   </div>
@@ -51,7 +29,7 @@
 
 <script setup lang="ts">
 import Line from "../Line/Line.vue";
-import type { infoConfigItem } from "docs/types";
+import type { infoConfigItem } from "docs/types/index.ts";
 
 const props = withDefaults(
   defineProps<{
@@ -63,7 +41,7 @@ const props = withDefaults(
   }>(),
   {
     infoConfig: () => [],
-    info: () => {},
+    info: () => { },
     col: 3,
     labelWidth: "80px",
     colon: true,
@@ -87,8 +65,8 @@ const valueCustomRender = (item: infoConfigItem): string => {
   return customRender
     ? customRender(props.info[key], item, props.info)
     : [null, undefined, ""].includes(props.info[key])
-    ? "--"
-    : props.info[key];
+      ? "--"
+      : props.info[key];
 };
 </script>
 
@@ -98,15 +76,18 @@ const valueCustomRender = (item: infoConfigItem): string => {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+
   .detail-info-item {
     display: flex;
     margin: 6px 0;
+
     .label {
       position: relative;
       text-align: right;
       color: var(--vp-c-text-2);
       padding-right: 16px;
     }
+
     .colon {
       &::after {
         content: ":";
@@ -115,15 +96,18 @@ const valueCustomRender = (item: infoConfigItem): string => {
         top: 0;
       }
     }
+
     .value {
       flex: 1;
       color: var(--vp-c-text-1);
       padding-right: 24px;
+
       &.nowrap {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
+
       &.wrap {
         white-space: pre-wrap;
       }

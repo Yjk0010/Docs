@@ -1,6 +1,8 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from "vitepress/theme-without-fonts";
 import "./custom.css"
+import "element-plus/dist/index.css";
+import 'element-plus/theme-chalk/dark/css-vars.css'
 import MyLayout from './Layout.vue'
 
 import Badge from "@/components/Badge/index.vue";
